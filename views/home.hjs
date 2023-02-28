@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Social Media Navigation Bar</title>
+   
+  </head>
+  <body>
+    
+    <div class="logo-img">
+        <img src="images/logo1.jpg" alt="MBCutss logo">
+        <link rel="stylesheet" href="css/stylehome.css">
+        
+   </div>
+    <header>
+         
+      <div class="logo"></div>
+      <h1>Social Media</h1>
+      <div class="search-container">
+        <input type="text" class="search-input" placeholder="Search">
+        <button class="search-button">Search</button>
+      </div>
+      <div class="actions">
+        <div class="action-item">Home</div>
+        <div class="action-item">Profile</div>
+        <div class="action-item">Messages</div>
+        <div class="action-item">Notifications</div>
+      </div>
+    </header>
+    
+   
+  </body>
+</html>

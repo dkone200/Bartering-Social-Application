@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Landing page</title>
+        <link rel="stylesheet" href="css/stylelanding.css">
+    </head>
+    <body>
+        <div class="banner">
+            <div class="slider">
+                <img src="images/handshake.jpg" id="slideImg">
+            </div>
+            <div class="overlay">
+                <div class="lnavbar">
+                    <div class="logo">
+                    <img src="images/barter.png">
+                </div>
+                    <div class="menu-icons">
+                        <img src="images/user.png">
+                        <img src="images/cart.png">
+                        <img src="images/menu.png">
+                    </div>
+
+                </div>
+
+                <div class="content">
+                    <h1>BARTER</h1>
+                    <h3>A step forward into the past</h3>
+                    <div>
+                      <button type="button" class="buttonText"><a href="login"> LOGIN</a></button>
+                      <button type="button" class="buttonText"><a href="register">REGISTER</a></button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+       
+
+        <div class="copyright">
+
+        </div>
+    </body>
+</html>

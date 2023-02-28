@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Registration</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form action="/register" method="POST">
+        <h3>Register Here</h3>
+
+        <label for="firstName">First Name</label>
+        <input type="text" placeholder="First name" id="firstName" name="firstName">
+
+        <label for="lastName">Last Name</label>
+        <input type="text" placeholder="Last name" id="lastName" name="lastName">
+
+        <label for="email">Email or Phone</label>
+        <input type="text" placeholder="Email or Phone" id="email" name="email">
+
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" id="password" name="password">
+
+        <label for="password2">Confirm Password</label>
+        <input type="password" placeholder="Confirm Password" id="password2" name="password2">
+
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>

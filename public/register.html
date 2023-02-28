@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title> Registration form</title>
+ 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form action="/register" method="POST">
+        <h3>Register Here</h3>
+
+        <label for="name">Name</label>
+        <input type="text" placeholder="First name" id="firstName">
+
+        <label for="name">Name</label>
+        <input type="text" placeholder="Last name" id="lastName">
+
+        <label for="username">Username</label>
+        <input type="text" placeholder="Email or Phone" id="email">
+
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" id="password">
+
+        <label for="password2">Re-enter Password</label>
+        <input type="password" placeholder="Confirm Password" id="password2">
+
+        <button type="submit">Log In</button>
+      
+    </form>
+
+    <script>
+        var myForm = document.getElementById('myForm');
+
+        myForm.addEventListener("submit", function (e) {
+
+            e.preventDefault()
+
+            var firstName = document.getElementById('firstName').value = "submitted First Name";
+            let lastName = document.getElementById('lastName').value = "Submitted Last Name";
+            let email = document.getElementById('email').value = "Submitted Email";
+            let password = document.getElementById('password').value = "Submitted Password";
+            let password2 = document.getElementById('password2').value = "Submitted Password";
+
+
+            console.log(firstName)
+            console.log(lastName)
+            console.log(email)
+            console.log(password)
+            console.log(password2)
+
+        })
+    </script>
+</body>
+</html>
