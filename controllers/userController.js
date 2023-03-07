@@ -18,7 +18,9 @@ const register = (req, res, next) => {
     })
     user.save()
       .then(user => {
+        res.render('account', { user });
         console.log("User added");
+
       })
       .catch(error => {
         res.json({
@@ -45,7 +47,7 @@ const login = (req, res, next) => {
           }
           if (result) {
             let token = jwt.sign({ name: user.name }, 'verySecretValue', { expiresIn: '1h' })
-            res.render('home');
+            res.render('account', { user });
            /* res.json({
               message: 'Login Succesful',
               token
@@ -66,6 +68,9 @@ const login = (req, res, next) => {
     })
 
 }
+
+
+
 
 module.exports = {
   register, login

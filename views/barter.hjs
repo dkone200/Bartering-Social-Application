@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Social Media Navigation Bar</title>
+  <link rel="stylesheet" href="css/stylehome.css">
+</head>
+
+<body>
+
+ 
+  <header>
+
+    <div class="logo"><img src="images/logo1.jpg" alt="MBCutss logo"></div>
+    <h1>Social Media</h1>
+    <div class="search-container">
+      <input type="text" class="search-input" placeholder="Search">
+      <button class="search-button">Search</button>
+    </div>
+    <div class="actions">
+      <div class="action-item">Home</div>
+      <div class="action-item"><a href="account">Account</a></div>
+      <div class="action-item">Messages</div>
+      <div class="action-item">Notifications</div>
+    </div>
+  </header>
+
+  <h1 style="position:relative; left: 150px; font-size: 20px;">Welcome to Barter page use your coins to trade!!</h1>
+
+<form action="/trading" method="POST" enctype="multipart/form-data">
+  <h1>Barter Exchange form</h1>
+  <label for="Title">Title:</label>
+  <input type="text" id="Title" name="Title" required>
+  <label for="Item1">Item 1:</label>
+  <input type="text" id="Item1" name="Item1" required>
+  <label for="Description">Description:</label>
+  <textarea id="Description" name="Description" rows="5"></textarea>
+  <label for="Image">Image:</label>
+  <input type="file" id="Image" name="Image">
+  <button type="submit">Submit</button>
+</form>
+
+ <br>
+ <br>
+
+
+</body>
+
+</html>

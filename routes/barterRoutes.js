@@ -5,7 +5,9 @@ const { route } = require('express/lib/application');
 const { append } = require('express/lib/response');
 const res = require('express/lib/response');
 const User = require('../models/User')
+const Barter = require('../models/Barter')
 const userController = require('../controllers/userController')
+const tradingController = require('../controllers/tradingController')
 const authenticate = require('../middleware/authanticate')
 
 const passport = require('passport')
@@ -50,7 +52,9 @@ router.get('/login', controller.show_login_page);
 
 router.get('/register', controller.show_register_page);
 
-router.get('/account1', controller.show_account_page);
+router.get('/account', controller.show_account_page);
+
+router.get('/barter', controller.show_barter_page);
 
 router.get('/account2', (req, res, next) => {
     res.render('account');
@@ -58,12 +62,17 @@ router.get('/account2', (req, res, next) => {
 
 router.post('/register', userController.register)
 router.post('/login', userController.login)
+router.post('/trading',tradingController.trading)
+router.get("/home", controller.show_barter);
+
+
+
+
+router.post('home')
 
 /*router.post('/register', passport.authenticate('localRegister', {
     successRedirect: '/home'
 }))*/
-
-
 
 
 
