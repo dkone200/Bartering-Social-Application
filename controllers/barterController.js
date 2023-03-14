@@ -1,5 +1,6 @@
 const router = require('../routes/barterRoutes');
 const Barter = require("../models/Barter.js");
+const Item = require("../models/Items.js");
 
 
 /*
@@ -37,8 +38,8 @@ exports.show_account_page = function (req, res){
     res.render("account")
 }
 
-exports.show_barter_page = function (req, res){
-    res.render("barter")
+exports.show_items_page = function (req, res){
+    res.render("items")
 }
 
 exports.show_barter = function (req, res){
@@ -51,4 +52,21 @@ exports.show_barter = function (req, res){
         message: 'An error occurred while retrieving barters'
       })
     })
+}
+
+
+exports.show_items = function (req, res){
+    Item.find({})
+    .then(items => {
+      res.render('items', { items: items });
+    })
+    .catch(error => {
+      res.json({
+        message: 'An error occurred while retrieving barters'
+      })
+    })
+}
+
+exports.save_items = function(req, res){
+  
 }

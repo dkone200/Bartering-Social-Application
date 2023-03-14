@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Social Media Navigation Bar</title>
-  <link rel="stylesheet" href="css/stylehome.css">
+  <link rel="stylesheet" href="css/styleitem.css">
 </head>
 
 <body>
@@ -28,7 +28,7 @@
 
   <h1 style="position:relative; left: 150px; font-size: 20px;">Welcome to Barter page use your coins to trade!!</h1>
 
-<form action="/trading" method="POST" enctype="multipart/form-data">
+<form action="/store" method="POST" enctype="multipart/form-data">
   <h1>Barter Exchange form</h1>
   <label for="Title">Title:</label>
   <input type="text" id="Title" name="Title" required>
@@ -43,6 +43,25 @@
 
  <br>
  <br>
+
+
+{{#items}}
+  <div class="card">
+    <div class="card-content">
+      <img src="data:{{Image.contentType}};base64,{{Image.data.toString('base64')}}">
+      <h2 class="card-title">{{Title}}</h2>
+      <p class="card-description">{{Description}}</p>
+      <button class="trade-button">Trade</button>
+    </div>
+  </div>
+{{/items}}
+{{^items}}
+  No entries yet.
+{{/items}}
+
+
+
+
 
 
 </body>

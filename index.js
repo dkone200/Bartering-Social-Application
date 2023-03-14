@@ -5,8 +5,9 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const session = require('express-session');
+const multer = require('multer');
 
-
+const fs = require('fs');
 
 const mustache = require('mustache-express');
 app.engine('mustache', mustache());
@@ -58,6 +59,19 @@ db.once('open', () =>{
   console.log('Database connected')
 })
 
+var storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+      cb(null, 'uploads')
+  },
+  filename: (req, file, cb) => {
+      cb(null, file.fieldname + '-' + Date.now())
+  }
+});
+
+var upload = multer({ storage: storage });
+
+const items = require('./routes/items');
+app.use('/items', items)
 
 
 

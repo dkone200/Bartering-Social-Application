@@ -22,19 +22,9 @@ const trading = (req, res, next) => {
     })
 }
 
-const prinTrading = (req, res, next) => {
-    Barter.find({})
-      .then(barters => {
-        res.render('home', { barters: barters });
-      })
-      .catch(error => {
-        res.json({
-          message: 'An error occurred while retrieving barters'
-        })
-      })
-  }
+
 
 module.exports = {
-  trading,
-  prinTrading
+  trading
+ 
 }

@@ -8,7 +8,13 @@ const User = require('../models/User')
 const Barter = require('../models/Barter')
 const userController = require('../controllers/userController')
 const tradingController = require('../controllers/tradingController')
+const upload = require('../middleware/upload')
+
+const itemsController = require ('../controllers/itemsController')
 const authenticate = require('../middleware/authanticate')
+
+const app = express();
+
 
 const passport = require('passport')
 
@@ -54,7 +60,13 @@ router.get('/register', controller.show_register_page);
 
 router.get('/account', controller.show_account_page);
 
-router.get('/barter', controller.show_barter_page);
+
+
+
+const items = require('../routes/items');
+app.use('/items', items)
+
+
 
 router.get('/account2', (req, res, next) => {
     res.render('account');
@@ -63,12 +75,17 @@ router.get('/account2', (req, res, next) => {
 router.post('/register', userController.register)
 router.post('/login', userController.login)
 router.post('/trading',tradingController.trading)
+router.post('/store', upload.single('Image'), itemsController.store)
+
+/*router.post('/items', itemsController.trading);*/
 router.get("/home", controller.show_barter);
+router.get("/items", controller.show_items);
 
 
 
 
 router.post('home')
+router.post('items')
 
 /*router.post('/register', passport.authenticate('localRegister', {
     successRedirect: '/home'

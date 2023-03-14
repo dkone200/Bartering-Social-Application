@@ -21,7 +21,7 @@
     <div class="actions">
       <div class="action-item">Home</div>
       <div class="action-item"><a href="account">Account</a></div>
-      <div class="action-item">Messages</div>
+      <div class="action-item"><a href="items">Items</a></div>
       <div class="action-item">Notifications</div>
     </div>
   </header>
