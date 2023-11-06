@@ -76,6 +76,7 @@ router.post('/register', userController.register)
 router.post('/login', userController.login)
 router.post('/trading',tradingController.trading)
 router.post('/store', upload.single('Image'), itemsController.store)
+router.post('/trade', controller.trade_items)
 
 /*router.post('/items', itemsController.trading);*/
 router.get("/home", controller.show_barter);

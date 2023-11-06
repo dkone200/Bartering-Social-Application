@@ -18,6 +18,7 @@ const register = (req, res, next) => {
     })
     user.save()
       .then(user => {
+        res.cookie('token', '', { httpOnly: true, maxAge: 0 })
         res.render('account', { user });
         console.log("User added");
 
@@ -47,8 +48,10 @@ const login = (req, res, next) => {
           }
           if (result) {
             let token = jwt.sign({ name: user.name }, 'verySecretValue', { expiresIn: '1h' })
+            res.cookie('token', token, { httpOnly: true, maxAge: 60 * 60 * 1000 })
             res.render('account', { user });
-           /* res.json({
+            console.log(token)
+            /* res.json({
               message: 'Login Succesful',
               token
             })*/
@@ -69,9 +72,11 @@ const login = (req, res, next) => {
 
 }
 
-
-
+const logout = (req, res, next) => {
+  res.cookie('token', '', { httpOnly: true, maxAge: 0 })
+  res.redirect('/')
+}
 
 module.exports = {
-  register, login
+  register, login, logout
 }

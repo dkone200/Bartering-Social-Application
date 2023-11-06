@@ -10,6 +10,7 @@ const Items = require('../models/Items');
 const store = (req, res, next) => {
   let items = new Items({
       Title: req.body.Title,
+      Price: req.body.Price,
       Description: req.body.Description,
   });
 

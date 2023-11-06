@@ -6,6 +6,7 @@ const userSchema = Schema({
     lastName: {type: String, default:''},
     email: {type: String, default:''},
     password: {type: String, default:''},
+    coins: {type: Number, default: 0},
     timestamp: {type: Date, default: Date.now},
 })
 

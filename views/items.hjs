@@ -32,10 +32,10 @@
   <h1>Barter Exchange form</h1>
   <label for="Title">Title:</label>
   <input type="text" id="Title" name="Title" required>
-  <label for="Item1">Item 1:</label>
-  <input type="text" id="Item1" name="Item1" required>
   <label for="Description">Description:</label>
   <textarea id="Description" name="Description" rows="5"></textarea>
+  <label for="Item1">Price:</label>
+  <input type="text" id="Price" name="Price" required>
   <label for="Image">Image:</label>
   <input type="file" id="Image" name="Image">
   <button type="submit">Submit</button>
@@ -46,19 +46,24 @@
 
 
 {{#items}}
+<form method="post" role="form" action="/trade">
   <div class="card">
     <div class="card-content">
-      <img src="data:{{Image.contentType}};base64,{{Image.data.toString('base64')}}">
+      <img src="data:{{Image.contentType}};base64,{{Image.base64}}">
       <h2 class="card-title">{{Title}}</h2>
+      <p class="card-description">{{Price}}</p>
       <p class="card-description">{{Description}}</p>
-      <button class="trade-button">Trade</button>
+      <input type="hidden" name="Price" value="{{Price}}">
+      <button class="trade-button" type="submit">Trade</button>
     </div>
   </div>
+ </form>
 {{/items}}
+
+
 {{^items}}
   No entries yet.
 {{/items}}
-
 
 
 
